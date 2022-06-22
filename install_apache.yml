@@ -1,0 +1,15 @@
+---
+
+- hosts: webservers
+  become: true
+  tasks:
+
+  - name: Update the Repository Index
+    apt:
+      update_cache: yes
+
+  - name: Install Apache2 Package
+    apt: 
+      name: apache2
+      state: latest
+
