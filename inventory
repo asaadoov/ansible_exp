@@ -1,9 +1,12 @@
-[databases]
+[databases] 
 db1
 
-[webservers]
+[webservers] 
 web1
 web2
+
+[webservers:vars]
+apache_package=apache2
 
 [proxy]
 loadbalancer

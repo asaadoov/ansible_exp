@@ -4,13 +4,10 @@
   become: true
   tasks:
 
-  - name: Update the Repository Index
-    apt:
-      update_cache: yes
-    when: ansible_distribution == "Ubuntu"
-
-  - name: Install Apache2 Package
-    apt: 
-      name: apache2
+  - name: Install Apache Package
+    package: 
+      name: 
+        - "{{ apache_package }}"
+        - htop
       state: latest
-    when: ansible_distribution == "Ubuntu"
+      update_cache: yes
